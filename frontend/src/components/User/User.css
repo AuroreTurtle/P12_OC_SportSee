@@ -1,0 +1,12 @@
+#user-title{
+    font-size: 48px;
+}
+
+#user-name{
+    color: rgba(255, 1, 1, 1);
+}
+
+#user-status{
+    font-size: 18px;
+    margin-top: 2%;
+}

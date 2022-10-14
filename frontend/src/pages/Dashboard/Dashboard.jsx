@@ -15,13 +15,19 @@ function Dashboard() {
 
     return (
         <main>
-            {userId ? <User userName={userData.userInfos.firstName} /> : <Error />}
-            <div>
-                <Card icon={caloriesIcon} total={userData.keyData.calorieCount} unit="kCal" type="Calories" />
-                <Card icon={proteinsIcon} total={userData.keyData.proteinCount} unit="g" type="Proteines" />
-                <Card icon={carbsIcon} total={userData.keyData.carbohydrateCount} unit="g" type="Glucides" />
-                <Card icon={lipidsIcon} total={userData.keyData.lipidCount} unit="g" type="Lipides" />
-            </div>
+            {userId ? (
+                <div>
+                    <User userName={userData.userInfos.firstName} />
+                    <div>
+                        <Card icon={caloriesIcon} total={userData.keyData.calorieCount} unit="kCal" type="Calories" />
+                        <Card icon={proteinsIcon} total={userData.keyData.proteinCount} unit="g" type="Proteines" />
+                        <Card icon={carbsIcon} total={userData.keyData.carbohydrateCount} unit="g" type="Glucides" />
+                        <Card icon={lipidsIcon} total={userData.keyData.lipidCount} unit="g" type="Lipides" />
+                    </div>
+                </div>
+            ) : (
+                <Error />
+            )}
         </main>
     );
 }

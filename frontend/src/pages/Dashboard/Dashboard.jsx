@@ -1,7 +1,9 @@
 import data from "../../data/mock.js";
+import "./Dashboard.css";
 import User from "../../components/User/User";
 import Error from "../Error/Error";
 import Card from "../../components/Card/Card.jsx";
+import BarChart from "../../components/Charts/BarChart/BarChart";
 
 import caloriesIcon from "../../assets/nutrients/calories.svg";
 import proteinsIcon from "../../assets/nutrients/proteins.svg";
@@ -12,17 +14,34 @@ function Dashboard() {
     const url = window.location.href;
     const userId = url.split("/").pop();
     const userData = data.USER_MAIN_DATA.find((element) => element.id === parseInt(userId));
+    const activityData = data.USER_ACTIVITY.find((element) => element.userId === parseInt(userId));
 
     return (
         <main>
             {userId ? (
                 <div>
                     <User userName={userData.userInfos.firstName} />
-                    <div>
-                        <Card icon={caloriesIcon} total={userData.keyData.calorieCount} unit="kCal" type="Calories" />
-                        <Card icon={proteinsIcon} total={userData.keyData.proteinCount} unit="g" type="Proteines" />
-                        <Card icon={carbsIcon} total={userData.keyData.carbohydrateCount} unit="g" type="Glucides" />
-                        <Card icon={lipidsIcon} total={userData.keyData.lipidCount} unit="g" type="Lipides" />
+                    <div id="stats">
+                        <div>
+                            <BarChart data={activityData.sessions} />
+                        </div>
+
+                        <div>
+                            <Card
+                                icon={caloriesIcon}
+                                total={userData.keyData.calorieCount}
+                                unit="kCal"
+                                type="Calories"
+                            />
+                            <Card icon={proteinsIcon} total={userData.keyData.proteinCount} unit="g" type="Proteines" />
+                            <Card
+                                icon={carbsIcon}
+                                total={userData.keyData.carbohydrateCount}
+                                unit="g"
+                                type="Glucides"
+                            />
+                            <Card icon={lipidsIcon} total={userData.keyData.lipidCount} unit="g" type="Lipides" />
+                        </div>
                     </div>
                 </div>
             ) : (

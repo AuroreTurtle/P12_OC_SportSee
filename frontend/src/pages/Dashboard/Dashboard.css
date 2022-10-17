@@ -3,3 +3,9 @@
     justify-content: space-between;
     margin-top: 40px;
 }
+
+#chart{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

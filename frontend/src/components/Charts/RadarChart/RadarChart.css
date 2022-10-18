@@ -1,0 +1,16 @@
+#radarchart{
+    height: 263px;
+    width: 258px;
+    background-color: #282D30;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+    border-radius: 5px;
+}
+
+/* Text position */
+.recharts-polar-angle-axis-tick:nth-child(1) > text {
+    transform: translateY(-5px);
+}
+
+.recharts-polar-angle-axis > g > g:nth-child(4) > text {
+    transform: translateY(15px);
+}

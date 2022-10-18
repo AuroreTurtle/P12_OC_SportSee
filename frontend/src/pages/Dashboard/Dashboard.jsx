@@ -5,6 +5,7 @@ import Error from "../Error/Error";
 import Card from "../../components/Card/Card.jsx";
 import BarChart from "../../components/Charts/BarChart/BarChart";
 import LineChart from "../../components/Charts/LineChart/LineChart.jsx";
+import RadarChart from "../../components/Charts/RadarChart/RadarChart.jsx";
 
 import caloriesIcon from "../../assets/nutrients/calories.svg";
 import proteinsIcon from "../../assets/nutrients/proteins.svg";
@@ -17,6 +18,7 @@ function Dashboard() {
     const userData = data.USER_MAIN_DATA.find((element) => element.id === parseInt(userId));
     const activityData = data.USER_ACTIVITY.find((element) => element.userId === parseInt(userId));
     const sessionData = data.USER_AVERAGE_SESSIONS.find((element) => element.userId === parseInt(userId));
+    const performanceData = data.USER_PERFORMANCE.find((element) => element.userId === parseInt(userId));
 
     return (
         <main>
@@ -26,8 +28,9 @@ function Dashboard() {
                     <div id="stats">
                         <div id="chart">
                             <BarChart data={activityData.sessions} />
-                            <div>
+                            <div id="chart-small">
                                 <LineChart data={sessionData.sessions} />
+                                <RadarChart data={performanceData.data} kind={performanceData.kind} />
                             </div>
                         </div>
 

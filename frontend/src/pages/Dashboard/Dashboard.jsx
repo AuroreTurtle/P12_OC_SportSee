@@ -6,6 +6,7 @@ import Card from "../../components/Card/Card.jsx";
 import BarChart from "../../components/Charts/BarChart/BarChart";
 import LineChart from "../../components/Charts/LineChart/LineChart.jsx";
 import RadarChart from "../../components/Charts/RadarChart/RadarChart.jsx";
+import RadialBarChart from "../../components/Charts/RadialBarChart/RadialBarChart.jsx";
 
 import caloriesIcon from "../../assets/nutrients/calories.svg";
 import proteinsIcon from "../../assets/nutrients/proteins.svg";
@@ -31,6 +32,7 @@ function Dashboard() {
                             <div id="chart-small">
                                 <LineChart data={sessionData.sessions} />
                                 <RadarChart data={performanceData.data} kind={performanceData.kind} />
+                                <RadialBarChart data={userData.score || userData.todayScore} />
                             </div>
                         </div>
 

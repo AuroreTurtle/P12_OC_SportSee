@@ -36,7 +36,7 @@ function Dashboard() {
                             </div>
                         </div>
 
-                        <div>
+                        <div id="cards">
                             <Card
                                 icon={caloriesIcon}
                                 total={userData.keyData.calorieCount}

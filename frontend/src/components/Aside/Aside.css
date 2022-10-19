@@ -33,5 +33,5 @@ aside {
     font-size: 12px;
     transform: rotate(-90deg);
     white-space: nowrap;
-    height: auto;
+    padding-left: 50px;
 }

@@ -1,18 +1,30 @@
+// Import data
 import data from "../../data/mock.js";
+
+// Import CSS
 import "./Dashboard.css";
+
+// Import components to display
 import User from "../../components/User/User";
-import Error from "../Error/Error";
 import Card from "../../components/Card/Card.jsx";
 import BarChart from "../../components/Charts/BarChart/BarChart";
 import LineChart from "../../components/Charts/LineChart/LineChart.jsx";
 import RadarChart from "../../components/Charts/RadarChart/RadarChart.jsx";
 import RadialBarChart from "../../components/Charts/RadialBarChart/RadialBarChart.jsx";
 
+// Import error page
+import Error from "../Error/Error";
+
+// Import nutrient icons
 import caloriesIcon from "../../assets/nutrients/calories.svg";
 import proteinsIcon from "../../assets/nutrients/proteins.svg";
 import carbsIcon from "../../assets/nutrients/carbs.svg";
 import lipidsIcon from "../../assets/nutrients/lipids.svg";
 
+/**
+ * It returns React Component that displays the dashboard of user with all charts.
+ * @return  A React component
+ */
 function Dashboard() {
     const url = window.location.href;
     const userId = url.split("/").pop();
@@ -22,6 +34,7 @@ function Dashboard() {
     const performanceData = data.USER_PERFORMANCE.find((element) => element.userId === parseInt(userId));
 
     return (
+        // if the user ID is found we display the dashboard with the content otherwise we display the error page.
         <main>
             {userId ? (
                 <div>

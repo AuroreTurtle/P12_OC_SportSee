@@ -1,10 +1,18 @@
-import React from "react";
+/* Importing the components from the recharts library. */
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip } from "recharts";
+
+// Import CSS
 import "./LineChart.css";
 
+/**
+ * It returns React Component that displays a line chart.
+ * @return  A React component
+ */
 function displayLineChart({ data }) {
     const userSessionData = [];
     const days = ["L", "M", "M", "J", "V", "S", "D"];
+
+    /* Creating an array of objects with the day of the week and the session length. */
     for (let i = 0; i < data.length; i++) {
         userSessionData.push({
             day: days[i],
@@ -12,6 +20,10 @@ function displayLineChart({ data }) {
         });
     }
 
+    /**
+     * If the tooltip is active and there is a payload, returns a div with the value and unit.
+     * @returns A div with a p tag.
+     */
     const CustomTooltip = ({ active, payload }) => {
         if (active && payload && payload.length) {
             return (

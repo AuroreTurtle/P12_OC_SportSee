@@ -1,5 +1,10 @@
+// Import CSS
 import "./Card.css";
 
+/**
+ * It returns a react component that displays a card with data.
+ * @returns A React component.
+ */
 function Card({ icon, total, unit, type }) {
     return (
         <div className="card">

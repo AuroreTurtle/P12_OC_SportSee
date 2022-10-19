@@ -1,9 +1,15 @@
+// Import CSS and icons
 import "./Aside.css";
+
 import Yoga from "../../assets/sports/yoga.svg";
 import Swim from "../../assets/sports/swim.svg";
 import Bike from "../../assets/sports/bike.svg";
 import Fitness from "../../assets/sports/fitness.svg";
 
+/**
+ * It returns a React component that displays navigation on the left.
+ * @returns A React component.
+ */
 function Aside() {
     return (
         <aside>

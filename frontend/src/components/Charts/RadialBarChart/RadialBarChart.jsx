@@ -1,9 +1,17 @@
-import React from "react";
+/* Importing the components from the recharts library. */
 import { ResponsiveContainer, RadialBar, RadialBarChart, PolarAngleAxis } from "recharts";
+
+// Import CSS
 import "./RadialBarChart.css";
 
+/**
+ * It returns React Component that displays a radial bar chart.
+ * @returns A React component.
+ */
 function displayRadialBarChart({ data }) {
     const score = data * 100;
+
+    // Object with two properties used for the chart
     const userScore = [{ value: score, fill: "#FF0000" }];
 
     return (

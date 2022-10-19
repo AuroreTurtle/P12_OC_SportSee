@@ -1,9 +1,18 @@
-import React from "react";
+/* Importing the components from the recharts library. */
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
+
+// Import CSS
 import "./BarChart.css";
 
+/**
+ * It returns React Component that displays a bar chart.
+ * @returns A React component.
+ */
 function displayBarChart({ data }) {
     const userActivityData = [];
+
+    /* A for loop that is iterating through the data array and pushing the data into the
+    userActivityData array to match the mockup. */
     for (let i = 0; i < data.length; i++) {
         userActivityData.push({
             index: i + 1,
@@ -12,6 +21,10 @@ function displayBarChart({ data }) {
         });
     }
 
+    /**
+     * It returns a span element with a value passed to it. Used for the barchart's legend.
+     * @returns A span element.
+     */
     const legendValue = (value) => {
         return (
             <span
@@ -27,6 +40,10 @@ function displayBarChart({ data }) {
         );
     };
 
+    /**
+     * If the tooltip is active and there is a payload, returns a div with the value and unit of the two bars.
+     * @returns A div with two p tags.
+     */
     const CustomTooltip = ({ active, payload }) => {
         if (active && payload && payload.length) {
             return (

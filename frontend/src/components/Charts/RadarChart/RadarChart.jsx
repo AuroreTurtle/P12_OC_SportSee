@@ -1,10 +1,18 @@
-import React from "react";
+/* Importing the components from the recharts library. */
 import { ResponsiveContainer, Radar, RadarChart, PolarGrid, PolarAngleAxis } from "recharts";
+
+// Import CSS
 import "./RadarChart.css";
 
+/**
+ * It returns React Component that displays a radar chart.
+ * @returns A React component.
+ */
 function displayRadarChart({ data, kind }) {
     const userPerformanceData = [];
     const kindName = [];
+
+    /* In this loop, we push the data into the kindName array with he corresponding kind name. */
     for (let i = 0; i < data.length; i++) {
         kindName.push(kind[i + 1]);
         userPerformanceData.push({

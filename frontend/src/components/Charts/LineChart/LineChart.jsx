@@ -59,7 +59,7 @@ function displayLineChart({ data }) {
                         padding={{ left: 15, right: 15 }}
                     />
                     <YAxis hide={true} domain={[0, "dataMax + 30"]} />
-                    <Tooltip content={<CustomTooltip />} cursor={<CustomCursor />} />
+                    <Tooltip content={<CustomTooltip />} cursor={<CustomCursor />} wrapperStyle={{ outline: "none" }} />
                     <Line
                         type="monotone"
                         dataKey="sessionLength"

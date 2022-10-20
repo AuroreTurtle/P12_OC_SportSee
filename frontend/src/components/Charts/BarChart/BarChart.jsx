@@ -89,7 +89,7 @@ function displayBarChart({ data }) {
                         tickMargin={15}
                     />
                     <YAxis dataKey="calories" yAxisId={1} hide={true} domain={["dataMin - 5", "dataMax + 5"]} />
-                    <Tooltip content={<CustomTooltip />} />
+                    <Tooltip content={<CustomTooltip />} wrapperStyle={{ outline: "none" }} />
                     <Legend
                         verticalAlign="top"
                         align="right"

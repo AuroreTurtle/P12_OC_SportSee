@@ -36,7 +36,7 @@ function Dashboard() {
     return (
         // if the user ID is found we display the dashboard with the content otherwise we display the error page.
         <main>
-            {userId ? (
+            {userId && userData && activityData && sessionData && performanceData ? (
                 <div>
                     <User userName={userData.userInfos.firstName} />
                     <div id="stats">

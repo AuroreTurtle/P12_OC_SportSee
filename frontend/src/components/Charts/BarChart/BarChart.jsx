@@ -25,7 +25,7 @@ function displayBarChart({ data }) {
      * It returns a span element with a value passed to it. Used for the barchart's legend.
      * @returns A span element.
      */
-    const legendValue = (value) => {
+    const CustomLegend = (value) => {
         return (
             <span
                 style={{
@@ -33,6 +33,7 @@ function displayBarChart({ data }) {
                     fontSize: "14px",
                     lineHeight: "24px",
                     paddingLeft: "12px",
+                    marginRight: "Opx",
                 }}
             >
                 {value}
@@ -65,7 +66,7 @@ function displayBarChart({ data }) {
         <div id="barchart">
             <span id="barchart-title">Activité quotidienne</span>
 
-            <ResponsiveContainer width="90%" height="90%">
+            <ResponsiveContainer width="90%" height="95%">
                 <BarChart data={userActivityData} barSize={7}>
                     <CartesianGrid vertical={false} stroke="#DEDEDE" strokeDasharray="2 2" />
                     <XAxis
@@ -74,6 +75,7 @@ function displayBarChart({ data }) {
                         tickLine={false}
                         tickSize={16}
                         stroke={"#DEDEDE"}
+                        padding={{ left: -50, right: -50 }}
                     />
                     <YAxis
                         dataKey="kilogram"
@@ -84,6 +86,7 @@ function displayBarChart({ data }) {
                         tickSize={30}
                         axisLine={false}
                         domain={["dataMin - 5", "dataMax + 5"]}
+                        tickMargin={15}
                     />
                     <YAxis dataKey="calories" yAxisId={1} hide={true} domain={["dataMin - 5", "dataMax + 5"]} />
                     <Tooltip content={<CustomTooltip />} />
@@ -92,9 +95,9 @@ function displayBarChart({ data }) {
                         align="right"
                         iconType="circle"
                         iconSize={8}
-                        height={47}
-                        wrapperStyle={{ paddingTop: "2%", paddingBottom: "2%" }}
-                        formatter={legendValue}
+                        height={30}
+                        wrapperStyle={{ paddingTop: "2%", paddingBottom: "5%" }}
+                        formatter={CustomLegend}
                     />
                     <Bar
                         dataKey="kilogram"

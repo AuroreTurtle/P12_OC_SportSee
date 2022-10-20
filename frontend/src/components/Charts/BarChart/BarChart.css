@@ -21,6 +21,7 @@
 
 #barchart .recharts-legend-item{
     padding-left: 32px;
+    margin-right: 0 !important;
 }
 
 .custom-tooltip{

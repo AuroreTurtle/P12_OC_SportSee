@@ -1,5 +1,5 @@
 /* Importing the components from the recharts library. */
-import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip } from "recharts";
+import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip, Rectangle } from "recharts";
 
 // Import CSS
 import "./LineChart.css";
@@ -37,11 +37,19 @@ function displayLineChart({ data }) {
         }
     };
 
+    /**
+     * CustomCursor is a function that takes in a parameter called points and returns a black rectangle.
+     * @returns A rectangle.
+     */
+    const CustomCursor = ({ points }) => {
+        return <Rectangle fill="#000000" opacity={0.2} x={points[0].x} width={300} height={300} />;
+    };
+
     return (
         <div id="linechart">
             <span id="linechart-title">Durée moyenne des sessions</span>
-            <ResponsiveContainer width="100%" height="90%">
-                <LineChart data={userSessionData} margin={{ top: 30, bottom: 5 }}>
+            <ResponsiveContainer width="100%" height="100%">
+                <LineChart data={userSessionData} margin={{ top: 30, bottom: 15 }}>
                     <XAxis
                         dataKey="day"
                         axisLine={false}
@@ -51,22 +59,15 @@ function displayLineChart({ data }) {
                         padding={{ left: 15, right: 15 }}
                     />
                     <YAxis hide={true} domain={[0, "dataMax + 30"]} />
-                    <Tooltip
-                        content={<CustomTooltip />}
-                        cursor={{
-                            stroke: "black",
-                            strokeOpacity: 0.1,
-                            strokeWidth: 50,
-                        }}
-                    />
+                    <Tooltip content={<CustomTooltip />} cursor={<CustomCursor />} />
                     <Line
                         type="monotone"
                         dataKey="sessionLength"
                         unit="min"
-                        stroke="white"
+                        stroke="#FFFFFF"
                         strokeWidth={2}
                         dot={false}
-                        activeDot={{ r: 8 }}
+                        activeDot={{ r: 6 }}
                     />
                 </LineChart>
             </ResponsiveContainer>

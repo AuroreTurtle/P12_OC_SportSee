@@ -42,7 +42,7 @@ function displayLineChart({ data }) {
      * @returns A rectangle.
      */
     const CustomCursor = ({ points }) => {
-        return <Rectangle fill="#000000" opacity={0.2} x={points[0].x} width={300} height={300} />;
+        return <Rectangle fill="#000000" opacity={0.1} x={points[0].x} width={300} height={300} />;
     };
 
     return (

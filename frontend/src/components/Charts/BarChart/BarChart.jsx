@@ -8,8 +8,8 @@ import "./BarChart.css";
 
 /**
  * It returns React Component that displays a bar chart.
- * @param {Array} data The data containing day (string), kilogram (number) and calories (number).
- * @returns A React component.
+ * @param {Array} data The data containing day (string), kilogram (number) and calories (number)
+ * @returns A React component
  */
 function displayBarChart({ data }) {
     const userActivityData = [];
@@ -26,8 +26,8 @@ function displayBarChart({ data }) {
 
     /**
      * It returns a span element with a value passed to it. Used for the barchart's legend.
-     * @param {string} value The name and unit of each data.
-     * @returns A span element.
+     * @param {string} value The name and unit of each data
+     * @returns A span element
      */
     const CustomLegend = (value) => {
         return (
@@ -49,7 +49,7 @@ function displayBarChart({ data }) {
      * If the tooltip is active and there is a payload, returns a div with the value and unit of the two bars.
      * @param {boolean} active
      * @param {Array} payload
-     * @returns A div with two p tags.
+     * @returns A div with two p tags
      */
     const CustomTooltip = ({ active, payload }) => {
         if (active && payload && payload.length) {

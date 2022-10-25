@@ -6,9 +6,9 @@ import performanceDataModel from "./models/performanceDataModel";
 
 /**
  * It returns the data fetched from the API.
- * @param {string} userID Id of the user we fetch the data.
- * @param {string} endpoint Endpoint of the API route used to fetch specific data.
- * @return {Object} Fetched data.
+ * @param {string} userID Id of the user we fetch the data
+ * @param {string} endpoint Endpoint of the API route used to fetch specific data
+ * @return {Object} Fetched data
  */
 async function fetchApiData(userID, endpoint) {
     const domain = "http://localhost:";

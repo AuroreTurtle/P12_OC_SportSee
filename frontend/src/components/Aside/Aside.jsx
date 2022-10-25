@@ -8,7 +8,7 @@ import Fitness from "../../assets/sports/fitness.svg";
 
 /**
  * It returns a React component that displays navigation on the left.
- * @returns A React component.
+ * @returns A React component
  */
 function Aside() {
     return (

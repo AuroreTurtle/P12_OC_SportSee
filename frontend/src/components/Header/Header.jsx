@@ -6,7 +6,7 @@ import Logo from "../../assets/logo.png";
 
 /**
  * It returns React Component that displays the header.
- * @returns A React component.
+ * @returns A React component
  */
 function Header() {
     return (

@@ -5,8 +5,8 @@ import "./User.css";
 
 /**
  * It returns a React component that displays the user name and a message in the dashboard.
- * @param {string} userName The user's name.
- * @returns A React component.
+ * @param {string} userName The user's name
+ * @returns A React component
  */
 function User({ userName }) {
     return (

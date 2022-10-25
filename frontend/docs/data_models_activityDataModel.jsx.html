@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: components/User/User.jsx</title>
+    <title>JSDoc: Source: data/models/activityDataModel.jsx</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: components/User/User.jsx</h1>
+    <h1 class="page-title">Source: data/models/activityDataModel.jsx</h1>
 
     
 
@@ -26,32 +26,22 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import PropTypes from "prop-types";
-
-// Import CSS
-import "./User.css";
-
-/**
- * It returns a React component that displays the user name and a message in the dashboard.
- * @param {string} userName The user's name
- * @returns A React component
+            <pre class="prettyprint source linenums"><code>/**
+ * It creates a class to use as a model for the API call.
  */
-function User({ userName }) {
-    return (
-        &lt;section id="user">
-            &lt;h1 id="user-title">
-                Bonjour &lt;span id="user-name">{userName}&lt;/span>
-            &lt;/h1>
-            &lt;p id="user-status">Félicitation ! Vous avez explosé vos objectifs hier 👏&lt;/p>
-        &lt;/section>
-    );
+class activityDataModel {
+    /**
+     *
+     * @param {number} userId The user id
+     * @param {Array} sessions An array containing day (string), kilogram (number) and calories (number)
+     */
+    constructor(userId, sessions) {
+        this.userId = userId;
+        this.sessions = sessions;
+    }
 }
 
-User.propTypes = {
-    userName: PropTypes.string.isRequired,
-};
-
-export default User;
+export default activityDataModel;
 </code></pre>
         </article>
     </section>

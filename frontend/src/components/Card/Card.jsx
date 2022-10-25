@@ -5,11 +5,11 @@ import "./Card.css";
 
 /**
  * It returns a react component that displays a card with data.
- * @param {string} icon The icon of the card.
- * @param {number} total The nutient total of the card.
- * @param {string} unit The unit of data.
- * @param {string} type The type of nutrient.
- * @returns A React component.
+ * @param {string} icon The icon of the card
+ * @param {number} total The nutient total of the card
+ * @param {string} unit The unit of data
+ * @param {string} type The type of nutrient
+ * @returns A React component
  */
 function Card({ icon, total, unit, type }) {
     return (

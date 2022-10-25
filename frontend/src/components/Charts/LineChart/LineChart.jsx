@@ -8,8 +8,8 @@ import "./LineChart.css";
 
 /**
  * It returns React Component that displays a line chart.
- * @param {Array} data The data containing the days of the week (number) and the length of the sports session (number).
- * @return  A React component.
+ * @param {Array} data The data containing the days of the week (number) and the length of the sports session (number)
+ * @return  A React component
  */
 function displayLineChart({ data }) {
     const userSessionData = [];
@@ -27,7 +27,7 @@ function displayLineChart({ data }) {
      * If the tooltip is active and there is a payload, returns a div with the value and unit.
      * @param {boolean} active
      * @param {Array} payload
-     * @returns A div with a p tag.
+     * @returns A div with a p tag
      */
     const CustomTooltip = ({ active, payload }) => {
         if (active && payload && payload.length) {
@@ -44,8 +44,8 @@ function displayLineChart({ data }) {
 
     /**
      * CustomCursor is a function that takes in a parameter called points and returns a black rectangle.
-     * @param {Array} points The coordinates of the points (number) of the rectangle.
-     * @returns A rectangle.
+     * @param {Array} points The coordinates of the points (number) of the rectangle
+     * @returns A rectangle
      */
     const CustomCursor = ({ points }) => {
         return <Rectangle fill="#000000" opacity={0.1} x={points[0].x} width={300} height={300} />;

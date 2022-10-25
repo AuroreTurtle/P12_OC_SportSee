@@ -19,11 +19,11 @@ import lipidsIcon from "../../assets/nutrients/lipids.svg";
 
 /**
  * It returns React Component that displays the dashboard of user with all charts.
- * @param {Object} userData The user data.
- * @param {Object} activityData The data of user's activity.
- * @param {Object} sessionData The data of user's average sessions.
- * @param {Object} performanceData The data of user's performance.
- * @return  A React component.
+ * @param {Object} userData The user data
+ * @param {Object} activityData The data of user's activity
+ * @param {Object} sessionData The data of user's average sessions
+ * @param {Object} performanceData The data of user's performance
+ * @return  A React component
  */
 function Dashboard({ userData, activityData, sessionData, performanceData }) {
     return (

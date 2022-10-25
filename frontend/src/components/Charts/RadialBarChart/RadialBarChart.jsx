@@ -8,8 +8,8 @@ import "./RadialBarChart.css";
 
 /**
  * It returns React Component that displays a radial bar chart.
- * @param {number} data The user's score.
- * @returns A React component.
+ * @param {number} data The user's score
+ * @returns A React component
  */
 function displayRadialBarChart({ data }) {
     const score = data * 100;

@@ -2,7 +2,7 @@ import "./Error.css";
 
 /**
  * It returns a React component that displays an error message if the user ID is not found.
- * @returns A React component.
+ * @returns A React component
  */
 function Error() {
     return (

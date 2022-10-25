@@ -11,7 +11,7 @@ import Error from "../Error/Error";
 /**
  * It returns a React component that fetches data from an API and passes it to the Dashboard component.
  * If the data is loaded, render the dashboard, otherwise render an error.
- * @returns A React component.
+ * @returns A React component
  */
 function UserHome() {
     const url = window.location.href;

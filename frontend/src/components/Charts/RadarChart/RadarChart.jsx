@@ -8,8 +8,8 @@ import "./RadarChart.css";
 
 /**
  * It returns React Component that displays a radar chart.
- * @param {array} data The data containing value (number) and kind (number).
- * @param {object} kind An object containing the names of the kinds (string).
+ * @param {Array} data The data containing value (number) and kind (number).
+ * @param {Object} kind An object containing the names of the kinds (string).
  * @returns A React component.
  */
 function displayRadarChart({ data, kind }) {

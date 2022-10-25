@@ -8,7 +8,7 @@ import "./BarChart.css";
 
 /**
  * It returns React Component that displays a bar chart.
- * @param {array} data The data containing day (string), kilogram (number) and calories (number).
+ * @param {Array} data The data containing day (string), kilogram (number) and calories (number).
  * @returns A React component.
  */
 function displayBarChart({ data }) {
@@ -48,7 +48,7 @@ function displayBarChart({ data }) {
     /**
      * If the tooltip is active and there is a payload, returns a div with the value and unit of the two bars.
      * @param {boolean} active
-     * @param {array} payload
+     * @param {Array} payload
      * @returns A div with two p tags.
      */
     const CustomTooltip = ({ active, payload }) => {

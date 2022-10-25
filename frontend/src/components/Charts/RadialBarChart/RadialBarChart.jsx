@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 /* Importing the components from the recharts library. */
 import { ResponsiveContainer, RadialBar, RadialBarChart, PolarAngleAxis } from "recharts";
 
@@ -6,6 +8,7 @@ import "./RadialBarChart.css";
 
 /**
  * It returns React Component that displays a radial bar chart.
+ * @param {number} data The user's score.
  * @returns A React component.
  */
 function displayRadialBarChart({ data }) {
@@ -35,5 +38,9 @@ function displayRadialBarChart({ data }) {
         </div>
     );
 }
+
+displayRadialBarChart.propTypes = {
+    data: PropTypes.number.isRequired,
+};
 
 export default displayRadialBarChart;

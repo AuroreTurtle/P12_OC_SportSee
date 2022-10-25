@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 /* Importing the components from the recharts library. */
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
 
@@ -6,6 +8,7 @@ import "./BarChart.css";
 
 /**
  * It returns React Component that displays a bar chart.
+ * @param {array} data The data containing day (string), kilogram (number) and calories (number).
  * @returns A React component.
  */
 function displayBarChart({ data }) {
@@ -23,6 +26,7 @@ function displayBarChart({ data }) {
 
     /**
      * It returns a span element with a value passed to it. Used for the barchart's legend.
+     * @param {string} value The name and unit of each data.
      * @returns A span element.
      */
     const CustomLegend = (value) => {
@@ -43,6 +47,8 @@ function displayBarChart({ data }) {
 
     /**
      * If the tooltip is active and there is a payload, returns a div with the value and unit of the two bars.
+     * @param {boolean} active
+     * @param {array} payload
      * @returns A div with two p tags.
      */
     const CustomTooltip = ({ active, payload }) => {
@@ -120,5 +126,15 @@ function displayBarChart({ data }) {
         </div>
     );
 }
+
+displayBarChart.propTypes = {
+    data: PropTypes.arrayOf(
+        PropTypes.shape({
+            day: PropTypes.string,
+            kilogram: PropTypes.number,
+            calories: PropTypes.number,
+        })
+    ).isRequired,
+};
 
 export default displayBarChart;

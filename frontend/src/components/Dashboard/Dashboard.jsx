@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 // Import CSS
 import "./Dashboard.css";
 
@@ -17,7 +19,11 @@ import lipidsIcon from "../../assets/nutrients/lipids.svg";
 
 /**
  * It returns React Component that displays the dashboard of user with all charts.
- * @return  A React component
+ * @param {object} userData The user data.
+ * @param {object} activityData The data of user's activity.
+ * @param {object} sessionData The data of user's average sessions.
+ * @param {object} performanceData The data of user's performance.
+ * @return  A React component.
  */
 function Dashboard({ userData, activityData, sessionData, performanceData }) {
     return (
@@ -45,5 +51,12 @@ function Dashboard({ userData, activityData, sessionData, performanceData }) {
         </main>
     );
 }
+
+Dashboard.propTypes = {
+    userData: PropTypes.object.isRequired,
+    activityData: PropTypes.object.isRequired,
+    sessionData: PropTypes.object.isRequired,
+    performanceData: PropTypes.object.isRequired,
+};
 
 export default Dashboard;

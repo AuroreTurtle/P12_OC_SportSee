@@ -1,8 +1,12 @@
+import PropTypes from "prop-types";
+
+// Import CSS
 import "./User.css";
 
 /**
  * It returns a React component that displays the user name and a message in the dashboard.
- * @returns A React component
+ * @param {string} userName The user's name.
+ * @returns A React component.
  */
 function User({ userName }) {
     return (
@@ -14,5 +18,9 @@ function User({ userName }) {
         </section>
     );
 }
+
+User.propTypes = {
+    userName: PropTypes.string.isRequired,
+};
 
 export default User;

@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 /* Importing the components from the recharts library. */
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip, Rectangle } from "recharts";
 
@@ -6,7 +8,8 @@ import "./LineChart.css";
 
 /**
  * It returns React Component that displays a line chart.
- * @return  A React component
+ * @param {array} data The data containing the days of the week (number) and the length of the sports session (number).
+ * @return  A React component.
  */
 function displayLineChart({ data }) {
     const userSessionData = [];
@@ -22,6 +25,8 @@ function displayLineChart({ data }) {
 
     /**
      * If the tooltip is active and there is a payload, returns a div with the value and unit.
+     * @param {boolean} active
+     * @param {array} payload
      * @returns A div with a p tag.
      */
     const CustomTooltip = ({ active, payload }) => {
@@ -39,6 +44,7 @@ function displayLineChart({ data }) {
 
     /**
      * CustomCursor is a function that takes in a parameter called points and returns a black rectangle.
+     * @param {array} points The coordinates of the points (number) of the rectangle.
      * @returns A rectangle.
      */
     const CustomCursor = ({ points }) => {
@@ -74,5 +80,14 @@ function displayLineChart({ data }) {
         </div>
     );
 }
+
+displayLineChart.propTypes = {
+    data: PropTypes.arrayOf(
+        PropTypes.shape({
+            day: PropTypes.number,
+            sessionLength: PropTypes.number,
+        })
+    ).isRequired,
+};
 
 export default displayLineChart;

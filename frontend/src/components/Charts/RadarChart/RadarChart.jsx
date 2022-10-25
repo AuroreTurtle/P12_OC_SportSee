@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 /* Importing the components from the recharts library. */
 import { ResponsiveContainer, Radar, RadarChart, PolarGrid, PolarAngleAxis } from "recharts";
 
@@ -6,6 +8,8 @@ import "./RadarChart.css";
 
 /**
  * It returns React Component that displays a radar chart.
+ * @param {array} data The data containing value (number) and kind (number).
+ * @param {object} kind An object containing the names of the kinds (string).
  * @returns A React component.
  */
 function displayRadarChart({ data, kind }) {
@@ -33,5 +37,15 @@ function displayRadarChart({ data, kind }) {
         </div>
     );
 }
+
+displayRadarChart.propTypes = {
+    data: PropTypes.arrayOf(
+        PropTypes.shape({
+            value: PropTypes.number,
+            kind: PropTypes.number,
+        })
+    ).isRequired,
+    kind: PropTypes.object.isRequired,
+};
 
 export default displayRadarChart;

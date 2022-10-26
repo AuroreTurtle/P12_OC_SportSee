@@ -32,7 +32,7 @@ To run the project, please follow the steps below.
 
 1. When all dependencies are installed, type :
     * In the backend terminal : `npm start ` and wait for the message "Magic happens on port 3000" to display
-    * In the frontend terminal : `npm start ` then a prompt saying "Another app is running on port 3000" will display, type "Y" to accept.
+    * In the frontend terminal : `npm start ` then a prompt will display "Something is already running on port 3000. Would you like to run the app on another port instead ?", type "Y" to accept
 2. The React app displays an error page. This is normal, you must add the user's ID to display his page.
 3. There are two user IDs : **12** and **18**. To access a user page, the correct URLs are :
     * `http://localhost:3001/12`

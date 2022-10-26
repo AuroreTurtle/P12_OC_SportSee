@@ -1,7 +1,7 @@
 /**
  * It creates a class to use as a model for the API call.
  */
-class performanceDataModel {
+class PerformanceDataModel {
     /**
      *
      * @param {number} userId The user id
@@ -15,4 +15,4 @@ class performanceDataModel {
     }
 }
 
-export default performanceDataModel;
+export default PerformanceDataModel;

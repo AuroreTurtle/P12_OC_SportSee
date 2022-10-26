@@ -1,8 +1,8 @@
 // Import different models
-import userDataModel from "./models/userDataModel";
-import activityDataModel from "./models/activityDataModel";
-import sessionDataModel from "./models/sessionDataModel";
-import performanceDataModel from "./models/performanceDataModel";
+import UserDataModel from "./models/userDataModel";
+import ActivityDataModel from "./models/activityDataModel";
+import SessionDataModel from "./models/sessionDataModel";
+import PerformanceDataModel from "./models/performanceDataModel";
 
 /**
  * It returns the data fetched from the API.
@@ -23,15 +23,15 @@ async function fetchApiData(userID, endpoint) {
 
     // Using an object by creating a new instance of the models to standardize the API response.
     const routes = {
-        "": new userDataModel(
+        "": new UserDataModel(
             request.data.id,
             request.data.userInfos,
             request.data.todayScore || request.data.score,
             request.data.keyData
         ),
-        activity: new activityDataModel(request.data.userId, request.data.sessions),
-        "average-sessions": new sessionDataModel(request.data.userId, request.data.sessions),
-        performance: new performanceDataModel(request.data.userId, request.data.kind, request.data.data),
+        activity: new ActivityDataModel(request.data.userId, request.data.sessions),
+        "average-sessions": new SessionDataModel(request.data.userId, request.data.sessions),
+        performance: new PerformanceDataModel(request.data.userId, request.data.kind, request.data.data),
     };
 
     return routes[endpoint];

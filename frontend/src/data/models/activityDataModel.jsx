@@ -1,7 +1,7 @@
 /**
  * It creates a class to use as a model for the API call.
  */
-class activityDataModel {
+class ActivityDataModel {
     /**
      *
      * @param {number} userId The user id
@@ -13,4 +13,4 @@ class activityDataModel {
     }
 }
 
-export default activityDataModel;
+export default ActivityDataModel;

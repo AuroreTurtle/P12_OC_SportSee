@@ -1,7 +1,7 @@
 /**
  * It creates a class to use as a model for the API call.
  */
-class sessionDataModel {
+class SessionDataModel {
     /**
      *
      * @param {number} userId The user id
@@ -13,4 +13,4 @@ class sessionDataModel {
     }
 }
 
-export default sessionDataModel;
+export default SessionDataModel;

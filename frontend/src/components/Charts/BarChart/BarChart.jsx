@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 /* Importing the components from the recharts library. */
-import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
+import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Rectangle } from "recharts";
 
 // Import CSS
 import "./BarChart.css";
@@ -68,6 +68,17 @@ function displayBarChart({ data }) {
         }
     };
 
+    /**
+     * CustomCursor is a function that takes in parameters called x, y and height to display a gray rectangle.
+     * @param {number} x The coordinates x
+     * @param {number} y The coordinates y
+     * @param {number} height The height of the rectangle
+     * @returns A rectangle
+     */
+    const CustomCursor = ({ x, y, height }) => {
+        return <Rectangle fill="#C4C4C4" opacity={0.5} x={x + 25} y={y} width={60} height={height} />;
+    };
+
     return (
         <div id="barchart">
             <span id="barchart-title">Activité quotidienne</span>
@@ -95,7 +106,7 @@ function displayBarChart({ data }) {
                         tickMargin={15}
                     />
                     <YAxis dataKey="calories" yAxisId={1} hide={true} domain={["dataMin - 5", "dataMax + 5"]} />
-                    <Tooltip content={<CustomTooltip />} wrapperStyle={{ outline: "none" }} />
+                    <Tooltip content={<CustomTooltip />} cursor={<CustomCursor />} wrapperStyle={{ outline: "none" }} />
                     <Legend
                         verticalAlign="top"
                         align="right"

@@ -7,10 +7,20 @@
 }
 
 /* Text position */
-.recharts-polar-angle-axis-tick:nth-child(1) > text {
-    transform: translateY(-5px);
+.recharts-polar-angle-axis-tick:nth-child(1) > text, 
+.recharts-polar-angle-axis-tick:nth-child(5) > text {
+    transform: translateY(7px);
 }
 
-.recharts-polar-angle-axis > g > g:nth-child(4) > text {
+.recharts-polar-angle-axis-tick:nth-child(2) > text, 
+.recharts-polar-angle-axis-tick:nth-child(4) > text {
+    transform: translateY(6px);
+}
+
+.recharts-polar-angle-axis > g > g:nth-child(3) > text {
     transform: translateY(15px);
+}
+
+.recharts-polar-angle-axis-tick:nth-child(6) > text {
+    transform: translateY(-5px);
 }

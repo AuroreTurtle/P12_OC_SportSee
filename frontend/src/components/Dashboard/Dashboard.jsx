@@ -35,7 +35,7 @@ function Dashboard({ userData, activityData, sessionData, performanceData }) {
                         <BarChart data={activityData.sessions} />
                         <div id="chart-small">
                             <LineChart data={sessionData.sessions} />
-                            <RadarChart data={performanceData.data} kind={performanceData.kind} />
+                            <RadarChart data={performanceData.data} />
                             <RadialBarChart data={userData.score || userData.todayScore} />
                         </div>
                     </div>

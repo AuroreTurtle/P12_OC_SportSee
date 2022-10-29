@@ -48,7 +48,7 @@ function UserHome() {
             }
             fetchApi();
         }
-    }, [setUser, setActivity, setSession, setPerformance, userId, useMockData]);
+    }, [userMockData, activityMockData, sessionMockData, performanceMockData, userId, useMockData]);
 
     return isLoaded ? (
         <Dashboard userData={user} activityData={activity} sessionData={session} performanceData={performance} />

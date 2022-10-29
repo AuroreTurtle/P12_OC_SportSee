@@ -15,11 +15,16 @@ async function fetchApiData(userID, endpoint) {
     const port = "3000";
     const urlApi = domain + port + "/user/" + userID + "/" + endpoint;
 
-    const request = await fetch(urlApi)
-        .then((response) => response.json())
-        .catch((err) => {
-            console.log(err.message);
-        });
+    try {
+        const response = await fetch(urlApi);
+        if (!response.ok) {
+            throw new Error("Network response was not ok.");
+        }
+    } catch (error) {
+        console.log("Error :", error.message);
+    }
+
+    const request = await fetch(urlApi).then((response) => response.json());
 
     // Using an object by creating a new instance of the models to standardize the API response.
     const routes = {

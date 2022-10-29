@@ -48,7 +48,8 @@ function UserHome() {
             }
             fetchApi();
         }
-    }, [userMockData, activityMockData, sessionMockData, performanceMockData, userId, useMockData]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     return isLoaded ? (
         <Dashboard userData={user} activityData={activity} sessionData={session} performanceData={performance} />

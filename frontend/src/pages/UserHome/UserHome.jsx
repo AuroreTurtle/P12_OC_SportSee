@@ -37,7 +37,9 @@ function UserHome() {
             setActivity(activityMockData);
             setSession(sessionMockData);
             setPerformance(performanceMockData);
-            setIsLoaded(true);
+            userMockData && activityMockData && sessionMockData && performanceMockData
+                ? setIsLoaded(true)
+                : setIsLoaded(false);
         } else {
             async function fetchApi() {
                 setUser(await fetchApiData(userId, ""));

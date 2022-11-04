@@ -3,7 +3,7 @@
     justify-content: space-between;
     flex-wrap: nowrap;
     margin-top: 40px;
-    height: 420px;
+    height: 450px;
 }
 
 #chart{
@@ -17,7 +17,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: 2.5%;
-    height:40%;
+    height:45%;
 }
 
 #cards{

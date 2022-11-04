@@ -36,7 +36,7 @@ function displayRadarChart({ data }) {
                     endAngle={-330}
                 >
                     <PolarGrid radialLines={false} />
-                    <PolarAngleAxis dataKey="kind" tick={{ fontSize: "12" }} />
+                    <PolarAngleAxis dataKey="kind" tick={{ fontSize: "8" }} />
                     <Radar dataKey="value" fill="#FF0101" fillOpacity={0.7} />
                 </RadarChart>
             </ResponsiveContainer>

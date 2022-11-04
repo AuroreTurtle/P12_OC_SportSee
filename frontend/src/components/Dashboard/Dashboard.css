@@ -1,39 +1,45 @@
 #stats{
     display: flex;
-    flex-direction: column-reverse;
     justify-content: space-between;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     margin-top: 40px;
+    height: 420px;
 }
 
 #chart{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 75%;
 }
 
 #chart-small{
     display: flex;
     justify-content: space-between;
-    margin-top: 2.4%;
+    margin-top: 2.5%;
+    height:40%;
 }
 
 #cards{
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 5%;
+    width: 22.5%;
+    height: 100%;
 }
 
 @media (min-width: 1440px) {
     #stats{
-        flex-direction: row;
-        flex-wrap: nowrap;
+        height: 636px;
     }
 
-    #chart{
-        margin-right: 30px;
+    #chart-small{
+        height: 50%;
     }
 
-    #cards{
-        flex-direction: column;
+    #cards {
+        grid-row-gap: 0%;
     }
 }

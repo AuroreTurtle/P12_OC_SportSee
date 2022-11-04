@@ -92,7 +92,7 @@ function displayBarChart({ data }) {
                         tickLine={false}
                         tickSize={16}
                         stroke={"#DEDEDE"}
-                        padding={{ left: -50, right: -50 }}
+                        padding={{ left: -35, right: -45 }}
                     />
                     <YAxis
                         dataKey="kilogram"
